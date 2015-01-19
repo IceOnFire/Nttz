@@ -1,0 +1,6 @@
+import it.ice.nttz.core.Nttz;
+import it.ice.nttz.core.model.Property;
+
+perform() {
+	target.getProperty(Nttz.CONTENT_VISIBLE).increaseValue(Property.AVG_VALUE);
+}

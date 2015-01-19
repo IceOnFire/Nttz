@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns="http://www.nttz.net/entities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.nttz.net/entities entities.xsd ">
+	<entity>
+		<definition>food</definition>
+		<properties>
+			<property name="taste" />
+			<property name="nutrition factor" />
+		</properties>
+	</entity>
+
+	<entity type="food">
+		<definition>apple</definition>
+		<properties>
+			<property name="taste" value="0.7" />
+			<property name="nutrition factor" value="0.2" />
+		</properties>
+	</entity>
+
+	<entity type="food">
+		<definition>vegetables</definition>
+		<properties>
+			<property name="taste" value="0.2" />
+			<property name="nutrition factor" value="0.3" />
+		</properties>
+	</entity>
+
+	<entity type="apple">
+		<definition>apple in fridge</definition>
+	</entity>
+
+	<entity type="it.ice.tabularasa.core.model.Sparkle">
+		<definition>sparkle</definition>
+		<properties>
+			<property name="taste" value="0" />
+		</properties>
+	</entity>
+
+	<entity>
+		<definition>fridge</definition>
+		<properties>
+			<property name="content visible" value="0" />
+			<property name="taste" value="0" />
+		</properties>
+		<relationships>
+			<relationship name="containing" target="apple in fridge" />
+			<relationship name="containing" target="sparkle" />
+		</relationships>
+	</entity>
+
+	<entity type="it.ice.tabularasa.core.model.creature.Creature">
+		<name>Puyo</name>
+		<definition>blob</definition>
+		<properties>
+			<property name="not hungry" value="1" decreaseValue="0.05" />
+		</properties>
+		<children>
+			<entity>
+				<definition>eyes</definition>
+			</entity>
+			<entity>
+				<definition>mouth</definition>
+				<sensors>
+					<sensor property="nutrition factor" />
+				</sensors>
+				<children>
+					<entity>
+						<definition>tongue</definition>
+						<sensors>
+							<sensor property="taste" />
+						</sensors>
+					</entity>
+				</children>
+			</entity>
+		</children>
+		<actions>
+			<action type="Grab" />
+			<action type="Taste" />
+			<action type="Eat" />
+			<action type="Open" />
+			<action type="it.ice.tabularasa.core.model.creature.actions.LookAround" />
+			<action
+				type="it.ice.tabularasa.core.model.creature.actions.HaveSomethingToEat" />
+		</actions>
+	</entity>
+
+	<entity type="it.ice.tabularasa.core.model.creature.Creature">
+		<definition>humanoid</definition>
+		<properties>
+			<property name="not hungry" value="1" decreaseValue="0.05" />
+		</properties>
+		<children>
+			<entity>
+				<definition>head</definition>
+				<children>
+					<entity>
+						<definition>face</definition>
+						<children>
+							<entity>
+								<definition>eyes</definition>
+							</entity>
+							<entity>
+								<definition>mouth</definition>
+								<sensors>
+									<sensor property="taste" />
+									<sensor property="nutrition factor" />
+								</sensors>
+								<children>
+									<entity>
+										<definition>lips</definition>
+									</entity>
+									<entity>
+										<definition>tongue</definition>
+										<sensors>
+											<sensor property="taste" />
+										</sensors>
+									</entity>
+								</children>
+							</entity>
+						</children>
+					</entity>
+				</children>
+			</entity>
+			<entity>
+				<definition>body</definition>
+				<children>
+					<entity>
+						<definition>chest</definition>
+					</entity>
+					<entity>
+						<definition>back</definition>
+					</entity>
+					<entity>
+						<definition>arms</definition>
+						<children>
+							<entity>
+								<definition>hands</definition>
+							</entity>
+						</children>
+					</entity>
+				</children>
+			</entity>
+			<entity>
+				<definition>abdomen</definition>
+			</entity>
+			<entity>
+				<definition>butt</definition>
+			</entity>
+			<entity>
+				<definition>legs</definition>
+			</entity>
+		</children>
+		<actions>
+			<action type="Grab">
+				<tools>
+					<tool>hands</tool>
+				</tools>
+			</action>
+			<action type="Taste" />
+			<action type="Eat" />
+			<action type="Open" />
+			<action type="Hold" />
+			<action type="it.ice.tabularasa.core.model.creature.actions.LookAround" />
+			<action
+				type="it.ice.tabularasa.core.model.creature.actions.HaveSomethingToEat" />
+		</actions>
+	</entity>
+</entities>

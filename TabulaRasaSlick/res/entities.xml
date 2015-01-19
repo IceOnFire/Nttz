@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns="http://www.nttz.net/entities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.nttz.net/entities entities.xsd ">
+	<entity>
+		<definition>plane</definition>
+		<properties>
+			<property name="x" />
+			<property name="y" />
+			<property name="rotation" value="0" />
+			<property name="scale" value="1" />
+			<property name="speed" value="0.4" />
+		</properties>
+	</entity>
+</entities>

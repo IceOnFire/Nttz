@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="res"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Nttz"/>
+	<classpathentry kind="lib" path="/home/ice/Programmi/GTGE/golden_0_2_3.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/ice/Programmi/GTGE/docs/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry combineaccessrules="false" kind="src" path="/TabulaRasa"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

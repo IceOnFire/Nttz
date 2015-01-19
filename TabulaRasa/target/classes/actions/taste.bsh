@@ -1,0 +1,10 @@
+perform() {
+	logger.info("[" + agent + "] tasting " + target + "...");
+	tongue = agent.s("tongue");
+	tongue.sense(target);
+	target.sense(tongue);
+}
+
+done() {
+	agent.removeRelationship("tasting", target);
+}

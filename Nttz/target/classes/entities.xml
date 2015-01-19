@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns="http://www.nttz.net/entities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.nttz.net/entities entities.xsd ">
+	<entity>
+		<definition>food</definition>
+		<properties>
+			<property name="taste" />
+			<property name="nutrition factor" />
+		</properties>
+	</entity>
+
+	<entity type="food">
+		<definition>apple</definition>
+		<properties>
+			<property name="taste" value="0.7" />
+			<property name="nutrition factor" value="0.2" />
+		</properties>
+	</entity>
+
+	<entity type="food">
+		<definition>vegetables</definition>
+		<properties>
+			<property name="taste" value="0.2" />
+			<property name="nutrition factor" value="0.3" />
+		</properties>
+	</entity>
+
+	<entity type="apple">
+		<definition>apple in fridge</definition>
+	</entity>
+
+	<entity>
+		<definition>fridge</definition>
+		<properties>
+			<property name="content visible" value="0" />
+			<property name="taste" value="0" />
+		</properties>
+		<relationships>
+			<relationship name="containing" target="apple in fridge" />
+			<relationship name="containing" target="sparkle" />
+		</relationships>
+	</entity>
+</entities>

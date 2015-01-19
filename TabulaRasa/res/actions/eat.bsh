@@ -1,0 +1,14 @@
+import it.ice.nttz.core.model.Entity;
+import it.ice.tabularasa.core.model.creature.Creature;
+
+perform() {
+	logger.info("[" + agent + "] eating " + target);
+	Entity mouth = agent.s("mouth");
+	mouth.sense(target);
+}
+
+done() {
+	/* useless, since the target will destroy any relationship with itself */
+	agent.removeRelationship(Creature.STATE_EATING, target);
+	target.destroy();
+}

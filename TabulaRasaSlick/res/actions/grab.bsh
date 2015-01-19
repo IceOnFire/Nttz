@@ -1,0 +1,6 @@
+perform() {
+	logger.info("[" + agent + "] grabbing " + target);
+	hands = agent.getChild("hands");
+	hands.sense(target);
+	target.sense(hands);
+}

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.nttz.net/entities"
+	xmlns:tns="http://www.nttz.net/entities" elementFormDefault="qualified">
+	<complexType name="Entity">
+		<sequence>
+			<element name="name" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="definition" type="string" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="categories" type="tns:Categories"
+				maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="properties" type="tns:Properties"
+				maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="sensors" type="tns:Sensors" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="children" type="tns:Entities" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="relationships" type="tns:Relationships"
+				maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="actions" type="tns:Actions" maxOccurs="1" minOccurs="0"></element>
+		</sequence>
+		<attribute name="type" type="string"></attribute>
+	</complexType>
+
+
+	<complexType name="Property">
+		<attribute name="name" type="string"></attribute>
+		<attribute name="value" type="float"></attribute>
+		<attribute name="decreaseValue" type="float"></attribute>
+	</complexType>
+
+	<complexType name="Category">
+		<attribute name="name" type="string"></attribute>
+		<attribute name="weight" type="float"></attribute>
+	</complexType>
+
+
+
+	<complexType name="Categories">
+		<sequence maxOccurs="unbounded" minOccurs="1">
+			<element name="category" type="tns:Category"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="Properties">
+		<sequence maxOccurs="unbounded" minOccurs="1">
+			<element name="property" type="tns:Property"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="Entities">
+		<sequence maxOccurs="unbounded" minOccurs="1">
+			<element name="entity" type="tns:Entity"></element>
+		</sequence>
+	</complexType>
+
+	<element name="entities" type="tns:Entities"></element>
+
+	<complexType name="Sensor">
+		<attribute name="property" type="string"></attribute>
+	</complexType>
+
+	<complexType name="Sensors">
+		<sequence maxOccurs="unbounded" minOccurs="1">
+			<element name="sensor" type="tns:Sensor"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="Relationships">
+		<sequence maxOccurs="unbounded" minOccurs="1">
+			<element name="relationship" type="tns:Relationship"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="Relationship">
+		<attribute name="name" type="string"></attribute>
+		<attribute name="target" type="string"></attribute>
+	</complexType>
+
+	<complexType name="Actions">
+		<sequence maxOccurs="unbounded" minOccurs="1">
+			<element name="action" type="tns:Action"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="Action">
+		<sequence>
+			<element name="target" type="string" maxOccurs="1" minOccurs="0"></element>
+			<element name="tools" type="tns:Tools" maxOccurs="1" minOccurs="0"></element>
+		</sequence>
+		<attribute name="type" type="string"></attribute>
+	</complexType>
+
+	<complexType name="Tools">
+		<sequence maxOccurs="unbounded" minOccurs="1">
+			<element name="tool" type="string"></element>
+		</sequence>
+	</complexType>
+</schema>

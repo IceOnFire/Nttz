@@ -1,0 +1,15 @@
+import it.ice.nttz.core.model.Action;
+import it.ice.nttz.core.model.Agent;
+
+public void perform() {
+	Agent slave = (Agent) target;
+	Action action = (Action) getArgument("action");
+	slave.disengage(action);
+	logger.info("[" + agent + "] stopped " + target + " from "
+			+ (action == null ? "doing nothing" : action));
+}
+
+public String toString() {
+	Action action = (Action) getArgument("action");
+	return super.toString() + " from " + action;
+}
